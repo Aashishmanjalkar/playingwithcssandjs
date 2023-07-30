@@ -1,0 +1,19 @@
+:root{
+    --color:rgba(174, 240, 33, 0.955);
+    --spacing:10px;
+    --blur:1px;
+}
+body{
+    text-align: center;
+}
+.controls{
+    padding-bottom: 50px;
+}
+img{
+    padding: var(--spacing);
+    filter: blur(var(--blur));
+    background: var(--color);
+}
+.h1{
+    color:var(--color) ;
+}

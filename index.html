@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css and Js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h2>Update Css Variables with <span class="h1" >JS</span></h2>
+    <div class="controls">
+        <label for="spacing">Spacing</label>
+        <input type="range" name="spacing" min="10" max="100" value="1" data-sizing="px">
+
+        <label for="spacing">Blur</label>
+        <input type="range" name="blur" min="1" max="100" value="1" data-sizing="px">
+
+        <label for="color">Color</label>
+        <input type="color" name="color" min="10" max="100" value="rgba(174, 240, 33, 0.955)">
+    </div>
+
+    <img src="bg.jpg" alt="" srcset="">
+
+    <script>
+        const input = document.querySelectorAll('.controls input');
+        input.forEach(element => {
+            element.addEventListener('change',changeCss);
+        });
+
+        function changeCss(){
+            const suffix = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
+        }
+    </script>
+</body>
+</html>
